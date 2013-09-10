@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Signup Failure</title>
+<title>Student Enrollment Signup</title>
 </head>
 <body>
 Signup failure - User Name Exists!!

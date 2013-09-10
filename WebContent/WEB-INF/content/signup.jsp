@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>New User Signup</h1>
-	<s:form action="signup">
+	<s:form action="signup" validate="true">
 		<s:hidden name="pageName" value="signup" />
 		<s:textfield label="User Name" name="userName" />
 		<s:password label="Password" name="password" />

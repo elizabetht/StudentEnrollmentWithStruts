@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Existing User Login</h1>
-	<s:form action="login">
+	<s:form action="login" validate="true">
 		<s:hidden name="pageName" value="login" />
 		<s:textfield label="User Name" name="userName" />
 		<s:password label="Password" name="password" />
