@@ -1,4 +1,4 @@
-package com.student.controller;
+package com.meygam.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -6,8 +6,8 @@ import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 
-import com.student.dao.StudentDao;
-import com.student.model.Student;
+import com.meygam.dao.StudentDao;
+import com.meygam.model.Student;
 
 public class StudentController {
 

@@ -1,12 +1,13 @@
-package com.student.dao;
+package com.meygam.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import com.student.model.Student;
-import com.student.util.DbUtil;
+
+import com.meygam.model.Student;
+import com.meygam.util.DbUtil;
 
 public class StudentDao {
 	private Connection dbConnection;

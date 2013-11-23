@@ -1,4 +1,4 @@
-package com.student.actions;
+package com.meygam.actions;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,13 +7,13 @@ import java.util.Date;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
+import com.meygam.controller.StudentController;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.DateRangeFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
-import com.student.controller.StudentController;
 
 public class SignupAction extends ActionSupport {	
 

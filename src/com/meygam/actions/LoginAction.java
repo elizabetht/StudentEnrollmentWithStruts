@@ -1,12 +1,12 @@
-package com.student.actions;
+package com.meygam.actions;
 
 import org.apache.struts2.convention.annotation.Action;
 
+import com.meygam.controller.StudentController;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
-import com.student.controller.StudentController;
 
 public class LoginAction extends ActionSupport {
 

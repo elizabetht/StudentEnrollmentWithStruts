@@ -1,4 +1,4 @@
-package com.student.util;
+package com.meygam.util;
 
 import java.io.InputStream;
 import java.sql.Connection;

@@ -1,4 +1,4 @@
-package com.student.model;
+package com.meygam.model;
 
 import java.util.Date;
 
