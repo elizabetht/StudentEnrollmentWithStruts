@@ -109,8 +109,6 @@ input[type="text"],input[type="password"] {
 								<s:submit cssClass="btn btn-primary" value="Login" />
 							</div>
 							<s:hidden name="pageName" value="login" />
-
-
 						</s:form>
 					</div>
 				</div>

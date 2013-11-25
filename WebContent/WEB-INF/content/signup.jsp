@@ -14,6 +14,7 @@
 <sj:head jqueryui="true" />
 
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="datepicker/css/datepicker.css" rel="stylesheet" />
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 
 
@@ -85,7 +86,7 @@ input[type="text"],input[type="password"] {
 	<script src="bootstrap/js/bootstrap.js">
 		
 	</script>
-
+	
 	<script src="datepicker/js/bootstrap-datepicker.js">
 		
 	</script>
@@ -113,9 +114,12 @@ input[type="text"],input[type="password"] {
 						<s:form id="myForm" method="post" action="signup"
 							enctype="multipart/form-data" theme="bootstrap" validate="true"
 							cssClass="bs-example form-horizontal">
+							
 							<fieldset>
 								<legend>Student Enrollment Signup Form</legend>
 
+								<s:hidden name="pageName" value="signup" />
+								
 								<s:textfield label="User Name" name="userName"
 									cssClass="col-lg-11" placeholder="User Name" />
 
@@ -138,44 +142,52 @@ input[type="text"],input[type="password"] {
 									cssClass="col-lg-11" placeholder="Email Address" />
 
 								<div class="col-lg-9 col-lg-offset-3">
-									<s:submit cssClass="btn btn-default" value="Cancel" />
+									<button class="btn btn-default">Cancel</button>
+									
+									<button class="btn btn-primary" data-toggle="modal"
+										data-target="#themodal">Submit</button>
+										
+									<div id="themodal" class="modal fade col-lg-9 col-lg-offset-3" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal"
+														aria-hidden="true">&times;</button>
+													<h3>Signup Form Submission</h3>
+												</div>
+												<div class="modal-body">
+													<p>Are you sure you want to do this?</p>
+													<div class="progress progress-striped active">
+														<div id="doitprogress" class="progress-bar"></div>
+													</div>
+												</div>
+												<div class="modal-footer">													
+													<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+													<input type="submit" value="Yes" id="yesbutton"
+														class="btn btn-primary" data-loading-text="Saving.."
+														data-complete-text="Submit Complete!">
+												</div>
+											</div>
+										</div>
+									</div>
 
-									<s:submit cssClass="btn btn-primary" data-toggle="modal"
-										data-target="#themodal" value="Submit" />
 								</div>
 							</fieldset>
-							<s:hidden name="pageName" value="signup" />
+							
 						</s:form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<div id="themodal" class="modal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-					<h3>Signup Form Submission</h3>
-				</div>
-				<div class="modal-body">
-					<p>Are you sure you want to do this?</p>
-					<div class="progress progress-striped active">
-						<div id="doitprogress" class="progress-bar"></div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-					<s:submit value="Yes" id="yesbutton" cssClass="btn btn-primary"
-						data-loading-text="Saving.." data-complete-text="Submit Complete!" />
-				</div>
-			</div>
-		</div>
-	</div>
-
+	
 	<script>
+		$(function() {
+			$('#dateOfBirthInput').datepicker();
+		});
+	</script>	
+		
+	<script type="text/javascript">
 		$(function() {
 			var yesButton = $("#yesbutton");
 			var progress = $("#doitprogress");		
