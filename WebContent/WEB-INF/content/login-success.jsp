@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Signup Failure</title>
+<title>Login Success</title>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
 </head>
@@ -33,9 +33,9 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentWithStruts">Home</a></li>
-				<li class="active"><a href="signup-input">Signup</a></li>
-				<li><a href="login-input">Login</a></li>
+				<li><a href="/StudentEnrollmentStruts">Home</a></li>
+				<li><a href="signup-input">Signup</a></li>
+				<li class="active"><a href="login-input">Login</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Explore<b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -51,20 +51,21 @@
 	<!-- 
 	<legend>Student Enrollment Login Success</legend>
 	 -->
-	<div class="panel panel-danger">
+	<div class="panel panel-success">
 		<div class="panel-heading">
-			<h3 class="panel-title">Student Enrollment Signup failure</h3>
+			<h3 class="panel-title">Student Enrollment Login success</h3>
 		</div>
 		<div class="panel-body">
-			<div class="alert alert-dismissable alert-danger">
-				<button type="button" class="close" data-dismiss="alert">×</button>
-				<strong>Oh snap!</strong> Something is wrong. Change
-					a few things up (user-name especially) and try submitting again.
-			</div>
+		<div class="alert alert-dismissable alert-success">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>Well done!</strong> You successfully logged-into the system. 
+              Now you can explore the complete features!
+            </div>
 		</div>
-		<div></div>
-		<div></div>
-		<a class="btn btn-primary" href="signup-input">Try
-			again?</a>
+	</div>
+	<div></div>
+	<div></div>
+	<a class="btn btn-primary" href="login-input">Login
+		as different user?</a>
 </body>
 </html>

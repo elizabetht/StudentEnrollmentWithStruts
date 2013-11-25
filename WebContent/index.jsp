@@ -1,23 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Signup Failure</title>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+<style>
+body {
+	height: 100%;
+	margin: 0;
+	background: url(assets/img/books.jpg);
+	background-size: 1440px 800px;
+	background-repeat: no-repeat;
+	display: compact;
+}
+</style>
 </head>
 <body>
-	<script src="jquery-1.8.3.js">
-		
-	</script>
-
-	<script src="bootstrap/js/bootstrap.js">
-		
-	</script>
-
 	<div class="navbar navbar-default">
 
 		<div class="navbar-header">
@@ -33,8 +29,8 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentWithStruts">Home</a></li>
-				<li class="active"><a href="signup-input">Signup</a></li>
+				<li class="active"><a href="StudentEnrollmentWithStruts">Home</a></li>
+				<li><a href="signup-input">Signup</a></li>
 				<li><a href="login-input">Login</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Explore<b class="caret"></b></a>
@@ -47,24 +43,25 @@
 		</div>
 		<!-- /.nav-collapse -->
 	</div>
-
-	<!-- 
-	<legend>Student Enrollment Login Success</legend>
-	 -->
-	<div class="panel panel-danger">
-		<div class="panel-heading">
-			<h3 class="panel-title">Student Enrollment Signup failure</h3>
-		</div>
-		<div class="panel-body">
-			<div class="alert alert-dismissable alert-danger">
-				<button type="button" class="close" data-dismiss="alert">×</button>
-				<strong>Oh snap!</strong> Something is wrong. Change
-					a few things up (user-name especially) and try submitting again.
+	<div class="container">
+		<div class="jumbotron">
+			<div>
+				<h1>Welcome to Online Student Enrollment!</h1>
+				<p>To get started, you need to enter your details to enroll with
+					us. Or login to access your details, if you are already enrolled.</p>
 			</div>
+
+			<a class="btn btn-primary" href="signup-input">Signup » </a> <a
+				class="btn btn-primary" href="login-input">Login » </a>
 		</div>
+
 		<div></div>
-		<div></div>
-		<a class="btn btn-primary" href="signup-input">Try
-			again?</a>
+	</div>
+	<script src="jquery-1.8.3.js">
+</script>
+
+	<script src="bootstrap/js/bootstrap.js">
+</script>
+
 </body>
 </html>

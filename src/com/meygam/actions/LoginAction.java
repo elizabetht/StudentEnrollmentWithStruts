@@ -31,7 +31,7 @@ public class LoginAction extends ActionSupport {
 				if (result.equals("LoginFailure")) {
 					return "failure";
 				} else {
-					return "message";
+					return "success";
 				}
 			}			
 		}
