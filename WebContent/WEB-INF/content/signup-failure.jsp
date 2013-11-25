@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Signup Failure</title>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
-<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
 </head>
 <body>
 	<script src="jquery-1.8.3.js">
@@ -58,13 +57,12 @@
 		<div class="panel-body">
 			<div class="alert alert-dismissable alert-danger">
 				<button type="button" class="close" data-dismiss="alert">×</button>
-				<strong>Oh snap!</strong> Something is wrong. Change
-					a few things up (user-name especially) and try submitting again.
+				<strong>Oh snap!</strong> Something is wrong. Change a few things up
+				(user-name especially) and try submitting again.
 			</div>
 		</div>
 		<div></div>
 		<div></div>
-		<a class="btn btn-primary" href="signup-input">Try
-			again?</a>
+		<a class="btn btn-primary" href="signup-input">Try again?</a>
 </body>
 </html>

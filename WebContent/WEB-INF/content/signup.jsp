@@ -11,10 +11,9 @@
 <title>Student Enrollment Signup</title>
 <sb:head includeScripts="false" includeScriptsValidation="false"
 	includeStylesResponsive="true" />
-<sj:head />
+<sj:head jqueryui="true" />
 
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-<link href="datepicker/css/datepicker.css" rel="stylesheet" />
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 
 
@@ -143,28 +142,6 @@ input[type="text"],input[type="password"] {
 
 									<s:submit cssClass="btn btn-primary" data-toggle="modal"
 										data-target="#themodal" value="Submit" />
-									<div id="themodal" class="modal fade col-lg-9 col-lg-offset-3">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal"
-														aria-hidden="true">&times;</button>
-													<h3>Signup Form Submission</h3>
-												</div>
-												<div class="modal-body">
-													<p>Are you sure you want to do this?</p>
-													<div class="progress progress-striped active">
-														<div id="doitprogress" class="progress-bar"></div>
-													</div>
-												</div>
-												<div class="modal-footer">
-													<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-													<s:submit value="Yes" id="yesbutton"
-														cssClass="btn btn-primary" />
-												</div>
-											</div>
-										</div>
-									</div>
 								</div>
 							</fieldset>
 							<s:hidden name="pageName" value="signup" />
@@ -175,21 +152,35 @@ input[type="text"],input[type="password"] {
 		</div>
 	</div>
 
-
+	<div id="themodal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h3>Signup Form Submission</h3>
+				</div>
+				<div class="modal-body">
+					<p>Are you sure you want to do this?</p>
+					<div class="progress progress-striped active">
+						<div id="doitprogress" class="progress-bar"></div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+					<s:submit value="Yes" id="yesbutton" cssClass="btn btn-primary"
+						data-loading-text="Saving.." data-complete-text="Submit Complete!" />
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script>
 		$(function() {
-			$('#dateOfBirthInput').datepicker();
-		});
-	</script>
-
-	<script>
-		$(function() {
-
 			var yesButton = $("#yesbutton");
-			var progress = $("#doitprogress");
-
-			yesButton.click(function() {
+			var progress = $("#doitprogress");		
+			
+			yesButton.click(function() {		
 				yesButton.button("loading");
 
 				var counter = 0;
@@ -202,12 +193,13 @@ input[type="text"],input[type="password"] {
 						setTimeout(countDown, 100);
 					}
 				};
-
+				
 				setTimeout(countDown, 100);
 			});
-
+			
 		});
 	</script>
+
 
 
 </body>
