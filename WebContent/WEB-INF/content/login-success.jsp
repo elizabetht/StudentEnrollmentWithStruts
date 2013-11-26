@@ -33,7 +33,7 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentStruts">Home</a></li>
+				<li><a href="/StudentEnrollmentWithStruts">Home</a></li>
 				<li><a href="signup-input">Signup</a></li>
 				<li class="active"><a href="login-input">Login</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"

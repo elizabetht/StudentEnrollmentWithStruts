@@ -93,22 +93,24 @@ input[type="text"],input[type="password"] {
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<s:form id="myForm" action="login" enctype="multipart/form-data"
-							theme="bootstrap" validate="true"
-							cssClass="bs-example form-horizontal" method="post">
-							<legend>Student Enrollment Login Form</legend>
+						<s:form id="myForm" action="login" theme="bootstrap"
+							validate="true" cssClass="bs-example form-horizontal"
+							method="post">
+							<fieldset>
+								<legend>Student Enrollment Login Form</legend>
 
-							<s:textfield label="User Name" name="userName"
-								cssClass="col-lg-12" placeholder="User Name" />
+								<s:textfield label="User Name" name="userName"
+									cssClass="col-lg-12" placeholder="User Name" />
 
-							<s:password label="Password" name="password" cssClass="col-lg-12"
-								placeholder="Password" />
+								<s:password label="Password" name="password"
+									cssClass="col-lg-12" placeholder="Password" />
 
-							<div class="col-lg-9 col-lg-offset-3">
-								<s:submit cssClass="btn btn-default" value="Cancel" />
-								<s:submit cssClass="btn btn-primary" value="Login" />
-							</div>
-							<s:hidden name="pageName" value="login" />
+								<div class="col-lg-9 col-lg-offset-3">
+									<s:submit cssClass="btn btn-default" value="Cancel" />
+									<s:submit cssClass="btn btn-primary" value="Login" />
+								</div>
+								<s:hidden name="pageName" value="login" />
+							</fieldset>
 						</s:form>
 					</div>
 				</div>
