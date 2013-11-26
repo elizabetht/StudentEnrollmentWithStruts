@@ -1,12 +1,13 @@
 package com.meygam.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import com.meygam.model.Student;
 import com.meygam.util.DbUtil;
 
 public class StudentDao {
@@ -16,15 +17,22 @@ public class StudentDao {
 		dbConnection = DbUtil.getConnection();
 	}
 	
-	public void addStudent(Student student) {
+	public void addStudent(String userName, String password, String firstName, String lastName, String dateOfBirth, String emailAddress) {
 		try {
-			PreparedStatement prepStatement = dbConnection.prepareStatement("insert into student(userName, firstName, lastName, password, emailAddress, dateOfBirth) values (?, ?, ?, ?, ?, ?)");
-			prepStatement.setString(1, student.getUserName());
-			prepStatement.setString(2, student.getFirstName());
-			prepStatement.setString(3, student.getLastName());
-			prepStatement.setString(4, student.getPassword());
-			prepStatement.setString(5, student.getEmailAddress());
-			prepStatement.setDate(6, new Date(student.getDateOfBirth().getTime()));
+			PreparedStatement prepStatement = dbConnection.prepareStatement("insert into student(userName, password, firstName, lastName, dateOfBirth, emailAddress) values (?, ?, ?, ?, ?, ?)");
+			prepStatement.setString(1, userName);
+			prepStatement.setString(2, password);
+			prepStatement.setString(3, firstName);
+			prepStatement.setString(4, lastName);
+			
+			try{
+				Date dob = new SimpleDateFormat("MM/dd/yyyy").parse(dateOfBirth);
+				prepStatement.setDate(5, (java.sql.Date) new Date(dob.getTime()));
+			} catch (ParseException e) {			
+				e.printStackTrace();
+			}	
+			
+			prepStatement.setString(6, emailAddress);
 			
 			prepStatement.executeUpdate();
 		} catch (SQLException e) {

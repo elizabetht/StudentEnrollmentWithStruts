@@ -21,26 +21,14 @@ public class StudentController {
 
 	public String addStudent(String userName, String password, String firstName,
 			String lastName, String dateOfBirth, String emailAddress) {
-		
-		if(student != null) {
-			student.setUserName(userName);
-			
+		if(studentDao != null) {
 			if (studentDao.checkUserName(userName)) {
-				return "SignupFailure-UserNameExists";				
+				return "SignupFailure-UserNameExists";
 			}
-			student.setPassword(password);
-			student.setFirstName(firstName);
-			student.setLastName(lastName);
-			student.setEmailAddress(emailAddress);
-		
-			try {
-				Date dob = new SimpleDateFormat("MM/dd/yyyy").parse(dateOfBirth);
-				student.setDateOfBirth(dob);
-			} catch (ParseException e) {			
-				e.printStackTrace();
-			}		
-			studentDao.addStudent(student);						
+			
+			studentDao.addStudent(userName, password, firstName, lastName, dateOfBirth, emailAddress);
 		}
+				
 		return "SignupSuccess";
 	}
 
