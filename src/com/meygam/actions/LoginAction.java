@@ -11,9 +11,7 @@ import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 @SuppressWarnings("serial")
 public class LoginAction extends ActionSupport {
 
-	private StudentService studentService;
 	private String pageName;
-	private String result;
 	private String userName;
 	private String password;
 
@@ -21,20 +19,21 @@ public class LoginAction extends ActionSupport {
 	public String input() throws Exception {
 		return "login";
 	}
-	
+
 	@Action("login")
 	public String execute() throws Exception {
-		studentService = new StudentService();
-		
-		if(pageName != null && studentService != null) {
-			if(pageName.equals("login")) {			
-				result = studentService.findByLogin(userName, password);		
+		String result = "";
+		StudentService studentService = new StudentService();
+
+		if (pageName != null && studentService != null) {
+			if (pageName.equals("login")) {
+				result = studentService.findByLogin(userName, password);
 				if (result.equals("LoginFailure")) {
 					return "failure";
 				} else {
 					return "success";
 				}
-			}			
+			}
 		}
 		return SUCCESS;
 	}
@@ -51,8 +50,8 @@ public class LoginAction extends ActionSupport {
 		return userName;
 	}
 
-	@RequiredStringValidator(type=ValidatorType.FIELD, message="UserName is a required field")
-	@StringLengthFieldValidator(type=ValidatorType.FIELD, maxLength="12", minLength="6", message="UserName must be of length between 6 and 12" )
+	@RequiredStringValidator(type = ValidatorType.FIELD, message = "UserName is a required field")
+	@StringLengthFieldValidator(type = ValidatorType.FIELD, maxLength = "12", minLength = "6", message = "UserName must be of length between 6 and 12")
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
@@ -61,11 +60,10 @@ public class LoginAction extends ActionSupport {
 		return password;
 	}
 
-	@RequiredStringValidator(type=ValidatorType.FIELD, message="Password is a required field")
-	@StringLengthFieldValidator(type=ValidatorType.FIELD, maxLength="12", minLength="6", message="Password must be of length between 6 and 12" )
+	@RequiredStringValidator(type = ValidatorType.FIELD, message = "Password is a required field")
+	@StringLengthFieldValidator(type = ValidatorType.FIELD, maxLength = "12", minLength = "6", message = "Password must be of length between 6 and 12")
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 
 }
