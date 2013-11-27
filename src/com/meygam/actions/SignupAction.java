@@ -1,15 +1,10 @@
 package com.meygam.actions;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
 import com.meygam.service.StudentService;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.validator.annotations.DateRangeFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
@@ -25,7 +20,7 @@ public class SignupAction extends ActionSupport {
 	private String lastName;
 	private String dateOfBirth;
 	private String emailAddress;	
-	private StudentService studentController;
+	private StudentService studentService;
 	private String result;
 
 	@Action("signup-input")
@@ -37,11 +32,11 @@ public class SignupAction extends ActionSupport {
 	@Action(value="signup", results={@Result(name="login-input", location="login-input", type="redirect")})
 	public String execute() throws Exception {
 		
-		studentController = new StudentService();
+		studentService = new StudentService();
 		
-		if(pageName != null && studentController != null) {
+		if(pageName != null && studentService != null) {
 			if(pageName.equals("signup")) {		
-				result = studentController.addStudent(userName, password, firstName, lastName, dateOfBirth, emailAddress);	
+				result = studentService.addStudent(userName, password, firstName, lastName, dateOfBirth, emailAddress);	
 				if (result.equals("SignupSuccess")) {
 					return "login-input";
 				} else {

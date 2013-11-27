@@ -16,7 +16,7 @@ public class StudentRepository {
 		dbConnection = DbUtil.getConnection();
 	}
 
-	public void addStudent(String userName, String password, String firstName,
+	public void save(String userName, String password, String firstName,
 			String lastName, String dateOfBirth, String emailAddress) {
 		if (dbConnection != null) {
 			try {
@@ -41,7 +41,7 @@ public class StudentRepository {
 		}
 	}
 
-	public boolean checkUserName(String userName) {
+	public boolean findByUserName(String userName) {
 		if (dbConnection != null) {
 			try {
 				PreparedStatement prepStatement = dbConnection
@@ -63,7 +63,7 @@ public class StudentRepository {
 		return false;
 	}
 
-	public boolean verifyStudent(String userName, String password) {
+	public boolean findByLogin(String userName, String password) {
 		if (dbConnection != null) {
 			try {
 				PreparedStatement prepStatement = dbConnection

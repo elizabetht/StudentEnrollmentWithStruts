@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 @SuppressWarnings("serial")
 public class LoginAction extends ActionSupport {
 
-	private StudentService studentController;
+	private StudentService studentService;
 	private String pageName;
 	private String result;
 	private String userName;
@@ -24,11 +24,11 @@ public class LoginAction extends ActionSupport {
 	
 	@Action("login")
 	public String execute() throws Exception {
-		studentController = new StudentService();
+		studentService = new StudentService();
 		
-		if(pageName != null && studentController != null) {
+		if(pageName != null && studentService != null) {
 			if(pageName.equals("login")) {			
-				result = studentController.verifyStudent(userName, password);		
+				result = studentService.verifyStudent(userName, password);		
 				if (result.equals("LoginFailure")) {
 					return "failure";
 				} else {

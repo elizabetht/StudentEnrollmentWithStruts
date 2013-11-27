@@ -4,20 +4,20 @@ import com.meygam.repository.StudentRepository;
 
 public class StudentService {
 
-	private StudentRepository studentDao;
+	private StudentRepository studentRepository;
 
 	public StudentService() {
-		studentDao = new StudentRepository();
+		studentRepository = new StudentRepository();
 	}
 
 	public String addStudent(String userName, String password,
 			String firstName, String lastName, String dateOfBirth,
 			String emailAddress) {
-		if (studentDao != null) {
-			if (studentDao.checkUserName(userName)) {
+		if (studentRepository != null) {
+			if (studentRepository.findByUserName(userName)) {
 				return "SignupFailure-UserNameExists";
 			}
-			studentDao.addStudent(userName, password, firstName, lastName,
+			studentRepository.save(userName, password, firstName, lastName,
 					dateOfBirth, emailAddress);
 			return "SignupSuccess";
 		} else {
@@ -27,8 +27,8 @@ public class StudentService {
 
 	public String verifyStudent(String userName, String password) {
 		String result = "LoginFailure";
-		if (studentDao != null) {
-			boolean status = studentDao.verifyStudent(userName, password);
+		if (studentRepository != null) {
+			boolean status = studentRepository.findByLogin(userName, password);
 			if (status) {
 				result = "LoginSuccess";
 			}
