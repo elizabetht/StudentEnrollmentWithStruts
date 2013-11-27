@@ -28,7 +28,7 @@ public class LoginAction extends ActionSupport {
 		
 		if(pageName != null && studentService != null) {
 			if(pageName.equals("login")) {			
-				result = studentService.verifyStudent(userName, password);		
+				result = studentService.findByLogin(userName, password);		
 				if (result.equals("LoginFailure")) {
 					return "failure";
 				} else {

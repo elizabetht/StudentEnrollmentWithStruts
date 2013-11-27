@@ -36,7 +36,7 @@ public class SignupAction extends ActionSupport {
 		
 		if(pageName != null && studentService != null) {
 			if(pageName.equals("signup")) {		
-				result = studentService.addStudent(userName, password, firstName, lastName, dateOfBirth, emailAddress);	
+				result = studentService.save(userName, password, firstName, lastName, dateOfBirth, emailAddress);	
 				if (result.equals("SignupSuccess")) {
 					return "login-input";
 				} else {

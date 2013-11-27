@@ -10,7 +10,7 @@ public class StudentService {
 		studentRepository = new StudentRepository();
 	}
 
-	public String addStudent(String userName, String password,
+	public String save(String userName, String password,
 			String firstName, String lastName, String dateOfBirth,
 			String emailAddress) {
 		if (studentRepository != null) {
@@ -25,7 +25,7 @@ public class StudentService {
 		}
 	}
 
-	public String verifyStudent(String userName, String password) {
+	public String findByLogin(String userName, String password) {
 		String result = "LoginFailure";
 		if (studentRepository != null) {
 			boolean status = studentRepository.findByLogin(userName, password);
