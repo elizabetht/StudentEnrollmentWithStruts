@@ -47,9 +47,6 @@
 		<!-- /.nav-collapse -->
 	</div>
 
-	<!-- 
-	<legend>Student Enrollment Login Success</legend>
-	 -->
 	<div class="panel panel-danger">
 		<div class="panel-heading">
 			<h3 class="panel-title">Student Enrollment Signup failure</h3>
@@ -57,8 +54,8 @@
 		<div class="panel-body">
 			<div class="alert alert-dismissable alert-danger">
 				<button type="button" class="close" data-dismiss="alert">×</button>
-				<strong>Oh snap!</strong> Something is wrong. Change a few things up
-				(user-name especially) and try submitting again.
+				<strong>Oh snap!</strong> Something (User Name) already exists! Change a few things up
+				(User Name especially) and try submitting again.
 			</div>
 		</div>
 		<div></div>

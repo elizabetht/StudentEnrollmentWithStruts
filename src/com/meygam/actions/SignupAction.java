@@ -7,7 +7,7 @@ import java.util.Date;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
-import com.meygam.controller.StudentController;
+import com.meygam.service.StudentService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.DateRangeFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;
@@ -15,6 +15,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 
+@SuppressWarnings("serial")
 public class SignupAction extends ActionSupport {	
 
 	private String pageName;
@@ -24,7 +25,7 @@ public class SignupAction extends ActionSupport {
 	private String lastName;
 	private String dateOfBirth;
 	private String emailAddress;	
-	private StudentController studentController;
+	private StudentService studentController;
 	private String result;
 
 	@Action("signup-input")
@@ -36,9 +37,9 @@ public class SignupAction extends ActionSupport {
 	@Action(value="signup", results={@Result(name="login-input", location="login-input", type="redirect")})
 	public String execute() throws Exception {
 		
-		studentController = new StudentController();
+		studentController = new StudentService();
 		
-		if(pageName != null) {
+		if(pageName != null && studentController != null) {
 			if(pageName.equals("signup")) {		
 				result = studentController.addStudent(userName, password, firstName, lastName, dateOfBirth, emailAddress);	
 				if (result.equals("SignupSuccess")) {

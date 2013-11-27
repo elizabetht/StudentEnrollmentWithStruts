@@ -2,15 +2,16 @@ package com.meygam.actions;
 
 import org.apache.struts2.convention.annotation.Action;
 
-import com.meygam.controller.StudentController;
+import com.meygam.service.StudentService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 
+@SuppressWarnings("serial")
 public class LoginAction extends ActionSupport {
 
-	private StudentController studentController;
+	private StudentService studentController;
 	private String pageName;
 	private String result;
 	private String userName;
@@ -23,9 +24,9 @@ public class LoginAction extends ActionSupport {
 	
 	@Action("login")
 	public String execute() throws Exception {
-		studentController = new StudentController();
+		studentController = new StudentService();
 		
-		if(pageName != null) {
+		if(pageName != null && studentController != null) {
 			if(pageName.equals("login")) {			
 				result = studentController.verifyStudent(userName, password);		
 				if (result.equals("LoginFailure")) {
