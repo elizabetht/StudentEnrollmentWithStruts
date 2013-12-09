@@ -54,12 +54,14 @@
 		<div class="panel-body">
 			<div class="alert alert-dismissable alert-danger">
 				<button type="button" class="close" data-dismiss="alert">×</button>
-				<strong>Oh snap!</strong> Something (User Name) already exists! Change a few things up
-				(User Name especially) and try submitting again.
+				<strong>Oh snap!</strong> Something (User Name) already exists!
+				Change a few things up (User Name especially) and try submitting
+				again.
 			</div>
 		</div>
 		<div></div>
 		<div></div>
 		<a class="btn btn-primary" href="signup-input">Try again?</a>
+	</div>
 </body>
 </html>

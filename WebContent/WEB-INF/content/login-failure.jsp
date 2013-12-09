@@ -65,5 +65,6 @@
 		<div></div>
 		<div></div>
 		<a class="btn btn-primary" href="login-input">Try again?</a>
+	</div>
 </body>
 </html>
