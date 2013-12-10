@@ -1,6 +1,6 @@
-package com.meygam.service;
+package com.github.elizabetht.service;
 
-import com.meygam.repository.StudentRepository;
+import com.github.elizabetht.repository.StudentRepository;
 
 public class StudentService {
 

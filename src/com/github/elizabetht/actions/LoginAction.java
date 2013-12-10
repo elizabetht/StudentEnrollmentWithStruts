@@ -1,8 +1,8 @@
-package com.meygam.actions;
+package com.github.elizabetht.actions;
 
 import org.apache.struts2.convention.annotation.Action;
 
-import com.meygam.service.StudentService;
+import com.github.elizabetht.service.StudentService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
